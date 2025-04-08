@@ -294,7 +294,7 @@ body {
 
 .section {
   width: clamp(180px, 20vw, 220px);
-  height: 70vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
