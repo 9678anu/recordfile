@@ -1095,6 +1095,7 @@ section {
 
 section h2, section h3 {
   color: #111;
+  border-bottom: 2px solid blueviolet;
   font-size: 46px;
   margin-bottom: 15px;
   text-transform: capitalize;
