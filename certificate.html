@@ -25,7 +25,7 @@
                 <a href="record.html">Set A Record</a>
                 <a href="award.html">Awards</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="certificate.html">Find your Certificate</a>
+                <a href="certificate.html">Find Your Certificate</a>
                 <a href="store.html">Our Store</a>
                 <a href="contact.html">Contact</a>
                 <a href="#">🔍</a>
@@ -33,58 +33,53 @@
         </div>
         <section class="hero">
           <div class="hero-content">
-            <h1>Set A Record</h1>
-            <p class="link-line">• Record < <a href="index.html">Home</a></p>
+            <h1>Find Your Certificate</h1>
+            <p class="link-line">• Certificate < <a href="index.html">Home</a></p>
           </div>
         </section>
+<!-- certificate start -->
 
-
-        <section class="info-section">
-            <div class="text">
-              <h3>The UNBWR</h3>
-              <p>The United Nation Book of World Records (UNBWR), USA stores and publishes the unbreakable records with ideas, model, item, and T-shirt.</p>
-              <button>Categories of Record Setting</button>
-            </div>
-            <div class="image">
-              <img src="https://media-hosting.imagekit.io/699da3750a2d426b/Moc-1-ovu127u7bw5bx7zqhiq7z7wx88o1b35rwruls8dgmo-removebg-preview.png?Expires=1838570181&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ha3BZIy3B2oHWMb8gVE3eBwEB1PtDMWCiAoz-aWYFJTHFN~ctfOMMU7hcxPDOJfb5blun14wVyb6xPRT9KIrQUYVHizn~ulUqwp-5b4szCO8a94pgN9Dci~awThTNIoTp0zi8Ar4q0euoLhP~vyKi0x-6kPY8ALmBFWjOfSja0OWBlY1rUEfAla2c8tsqIJvXi9axTuQH52-HIWth8L3Uj0Z83Z5w67Qqpi8~F5iwcl7HbYzKPWwdjyjPK0yIo-dKf0tv4OBXwtTml~8WzE6EviNDdGGQ-JtJyWRFO1wStaU861ioBx2zLSpLZRSZNvTf946L8dYJFPPG7mxfp01CQ__" alt="UNBWR Merchandise" />
-            </div>
-          </section>
-        
-          <section class="steps">
-            <div>
-            <h2>Process and Procedure</h2>
-            <p>Below are the simplified steps for the application process and procedure:</p></div>
-            <ol>
-              <li>Fill the online form given on the website.</li>
-              <li>Immediate reply from UNBWR Organization.</li>
-              <li>Read Accept Terms and Conditions and confirm via form.</li>
-              <li>Review committee will issue report.</li>
-              <li>Declaration of record from UNBWR USA.</li>
-            </ol>
-          </section>
-        
-          <section class="policies">
-            <h2>Record Policies</h2>
-            <ul>
-              <li>Record title should be unique.</li>
-              <li>Details must be filled accurately.</li>
-              <li>Video/photo proof is mandatory.</li>
-              <li>Process requires 30 days for certificate.</li>
-              <li>UNBWR has rights to accept or reject based on verification.</li>
-            </ul>
-          </section>
-        
-          <section class="consultancy">
-            <h2>Record Consultancy</h2>
-            <p>If you want to apply for a new record title and you seek consultancy, kindly fill the application form. The fee is non-refundable once submitted.</p>
-          </section>
-        
-          <section class="legal">
-            <h2>Legal Points</h2>
-            <p>The awarded certificate should not be reproduced without prior permission. All disputes are subject to the jurisdiction of California, USA.</p>
-          </section>
-        
-            <!-- Footer Start -->
+<section class="form-container">
+  <h2>Submit Your Details</h2>
+  <form action="#" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+      </div>
+      <div class="form-group">
+          <label for="country">Country:</label>
+          <select id="country" name="country" required onchange="updateCities()">
+              <option value="">Select a Country</option>
+              <!-- Countries will be populated dynamically via JavaScript -->
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="city">City:</label>
+          <select id="city" name="city" required>
+              <option value="">Select a City</option>
+              <!-- Cities will be populated dynamically via JavaScript -->
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="id-proof">Upload Aadhaar Proof:</label>
+          <input type="file" id="id-proof-aadhaar" name="id_proof_aadhaar" accept="image/*,application/pdf" required>
+      </div>
+      <div class="form-group">
+          <label for="pan-proof">Upload PAN Proof:</label>
+          <input type="file" id="pan-proof" name="pan_proof" accept="image/*,application/pdf" required>
+      </div>
+      <button type="submit">Submit</button>
+  </form>
+</section>
+           <!-- Footer Start -->
     <footer class="footer">
         <div class="footer-container">
           <!-- Logo & Contact -->
@@ -147,6 +142,42 @@
         </div>
       </footer>
       <!-- Footer End -->
-      
+      <script>
+        const countriesAndCities = {
+            "India": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata"],
+            "USA": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+            "UK": ["London", "Manchester", "Birmingham", "Glasgow", "Liverpool"]
+        };
+    
+        // Populate country dropdown on page load
+        window.onload = function() {
+            const countrySelect = document.getElementById("country");
+            for (let country in countriesAndCities) {
+                let option = document.createElement("option");
+                option.value = country;
+                option.text = country;
+                countrySelect.appendChild(option);
+            }
+        };
+    
+        // Update city dropdown based on selected country
+        function updateCities() {
+            const countrySelect = document.getElementById("country");
+            const citySelect = document.getElementById("city");
+            const selectedCountry = countrySelect.value;
+    
+            // Clear existing options
+            citySelect.innerHTML = '<option value="">Select a City</option>';
+    
+            if (selectedCountry && countriesAndCities[selectedCountry]) {
+                countriesAndCities[selectedCountry].forEach(city => {
+                    let option = document.createElement("option");
+                    option.value = city;
+                    option.text = city;
+                    citySelect.appendChild(option);
+                });
+            }
+        }
+    </script>
     </body>
     </html>
